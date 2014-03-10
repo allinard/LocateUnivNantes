@@ -35,8 +35,9 @@ public class MainActivity extends Activity {
 		buttonEntrer.setOnClickListener(new OnClickListener() {
 			@Override
 			public void onClick(View arg0) {
-				// TODO ce qui se passe qd on clique
-			}
+				Intent intent = new Intent(MainActivity.this,
+						LoginActivity.class);
+				startActivity(intent);			}
 
 		});
 	}
@@ -58,7 +59,6 @@ public class MainActivity extends Activity {
 		buttonAide.setOnClickListener(new OnClickListener() {
 			@Override
 			public void onClick(View arg0) {
-				// TODO ce qui se passe qd on clique
 				Intent intent = new Intent(MainActivity.this,
 						AideActivity.class);
 				startActivity(intent);
