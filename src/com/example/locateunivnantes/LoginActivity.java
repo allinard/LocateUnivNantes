@@ -1,7 +1,10 @@
 package com.example.locateunivnantes;
 
+import com.example.locateunivnantes.utils.LoginCASUnivNantes;
+
 import android.app.Activity;
 import android.content.Context;
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.Menu;
 import android.view.View;
@@ -46,15 +49,21 @@ public class LoginActivity extends Activity {
 		buttonLogin.setOnClickListener(new OnClickListener() {
 			@Override
 			public void onClick(View arg0) {
-				//TODO le login
 				EditText login = (EditText) findViewById(R.id.editTextLogin);
 				EditText password = (EditText) findViewById(R.id.editTextPassWd);
 				
-				Context context = getApplicationContext();
-				int duration = Toast.LENGTH_SHORT;
-
-				Toast toast = Toast.makeText(context, "login: "+login.getText().toString()+"\npassword: "+password.getText().toString(), duration);
-				toast.show();
+				LoginCASUnivNantes loginCASUnivNantes = LoginCASUnivNantes.getInstance();
+				if(loginCASUnivNantes.logIn(login.getText().toString(), password.getText().toString())){
+					Intent intent = new Intent(LoginActivity.this,
+							ChoixDestinationActivity.class);
+					startActivity(intent);
+				}
+				else{
+					login.setText("");
+					password.setText("");
+					Toast toast = Toast.makeText(getApplicationContext(),"Login et Mdp éronnés : veuillez ressaisir les champs", Toast.LENGTH_LONG);
+					toast.show();
+				}
 			}
 
 		});

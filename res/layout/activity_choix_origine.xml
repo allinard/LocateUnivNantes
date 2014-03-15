@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent" >
+    
+
+        <Button
+        android:id="@+id/btnRetour"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_alignParentRight="true"
+        android:layout_marginBottom="17dp"
+        android:layout_marginRight="23dp"
+        android:text="Retour" />
+
+        <TextView
+            android:id="@+id/textView3"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentRight="true"
+            android:layout_below="@+id/textView1"
+            android:layout_marginTop="68dp"
+            android:text="Sélectionnez un mode de localisation :"
+            android:textAppearance="?android:attr/textAppearanceMedium" />
+
+        <TextView
+            android:id="@+id/textView1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignLeft="@+id/textView3"
+            android:layout_alignParentTop="true"
+            android:layout_marginTop="24dp"
+            android:text="Vous allez :"
+            android:textAppearance="?android:attr/textAppearanceMedium" />
+
+        <TextView
+            android:id="@+id/salleDestination"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_above="@+id/textView3"
+            android:layout_marginLeft="14dp"
+            android:layout_toRightOf="@+id/textView1"
+            android:text="salleXX" />
+
+        <Button
+            android:id="@+id/btnQRCode"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignRight="@+id/salleDestination"
+            android:layout_below="@+id/textView3"
+            android:layout_marginRight="19dp"
+            android:layout_marginTop="56dp"
+            android:text="QRCode" />
+
+        <Button
+            android:id="@+id/btnSalle"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignBaseline="@+id/btnQRCode"
+            android:layout_alignBottom="@+id/btnQRCode"
+            android:layout_marginLeft="26dp"
+            android:layout_toRightOf="@+id/btnQRCode"
+            android:text="Salle" />
+        
+</RelativeLayout>
