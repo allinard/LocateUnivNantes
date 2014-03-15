@@ -6,6 +6,7 @@ import java.util.List;
 
 import android.os.Bundle;
 import android.app.Activity;
+import android.content.Intent;
 import android.view.Menu;
 import android.view.View;
 import android.view.View.OnClickListener;
@@ -81,18 +82,12 @@ public class ChoixOrigineBatimentActivity extends Activity {
 							"Vous devez sélectionner une salle!",
 							Toast.LENGTH_LONG).show();
 				} else {
-					// Intent intent = new
-					// Intent(ChoixOrigineBatimentActivity.this,
-					// ItineraireActivity.class);
-					// intent.putExtra("destinationSalle",
-					// getSalleDestination());
-					// intent.putExtra("origineSalle", getSalleSelected());
-					// startActivity(intent);
-					Toast.makeText(
-							getApplicationContext(),
-							"Origine:" + getSalleSelected() + "\nDestination:"
-									+ getSalleDestination(), Toast.LENGTH_LONG)
-							.show();
+					Intent intent = new Intent(
+							ChoixOrigineBatimentActivity.this,
+							ItineraireActivity.class);
+					intent.putExtra("destinationSalle", getSalleDestination());
+					intent.putExtra("origineSalle", getSalleSelected());
+					startActivity(intent);
 				}
 
 			}

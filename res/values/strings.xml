@@ -17,7 +17,7 @@
     <string name="msg_default_format">Format</string>
     <string name="msg_default_meta">Metadata</string>
     <string name="msg_default_mms_subject">Hi</string>
-    <string name="msg_default_status">Place a barcode inside the viewfinder rectangle to scan it.</string>
+    <string name="msg_default_status">Placer le code QR dans le rectangle pour le scanner.</string>
     <string name="msg_default_time">Time</string>
     <string name="msg_default_type">Type</string>
     <string name="result_address_book">Found contact info</string>
