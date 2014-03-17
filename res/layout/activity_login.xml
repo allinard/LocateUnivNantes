@@ -11,7 +11,8 @@
         android:layout_alignParentTop="true"
         android:layout_centerHorizontal="true"
         android:layout_marginTop="56dp"
-        android:ems="10" >
+        android:ems="10"
+        android:hint="Identifiant" >
 
         <requestFocus />
     </EditText>
@@ -24,7 +25,8 @@
         android:layout_below="@+id/editTextLogin"
         android:layout_marginTop="39dp"
         android:ems="10"
-        android:inputType="textPassword" />
+        android:inputType="textPassword"
+        android:hint="Mot de passe" />
 
     <Button
         android:id="@+id/btnLogin"
