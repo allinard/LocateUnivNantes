@@ -4,6 +4,8 @@ import android.os.Bundle;
 import android.app.Activity;
 import android.content.Intent;
 import android.view.Menu;
+import android.view.MenuInflater;
+import android.view.MenuItem;
 import android.view.View;
 import android.view.View.OnClickListener;
 import android.widget.Button;
@@ -33,12 +35,38 @@ public class ChoixOrigineActivity extends Activity {
 		salleDestination = (TextView) findViewById(R.id.salleDestination);
 		salleDestination.setText(getSalleSelected());
 	}
+	
+	private Menu m = null;
 
 	@Override
 	public boolean onCreateOptionsMenu(Menu menu) {
-		// Inflate the menu; this adds items to the action bar if it is present.
-		getMenuInflater().inflate(R.menu.main, menu);
+		MenuInflater inflater = getMenuInflater();
+		inflater.inflate(R.menu.main, menu);
+		m = menu;
 		return true;
+	}
+
+	@Override
+	public boolean onOptionsItemSelected(MenuItem item) {
+		switch (item.getItemId()) {
+		case R.id.item1:
+			Intent intent1 = new Intent(ChoixOrigineActivity.this,
+					MainActivity.class);
+			startActivity(intent1);
+			return true;
+		case R.id.item2:
+			return true;
+		case R.id.item3:
+			return true;
+		case R.id.item4:
+			return true;
+		case R.id.item5:
+			Intent intent = new Intent(ChoixOrigineActivity.this,
+					AideActivity.class);
+			startActivity(intent);
+			return true;
+		}
+		return super.onOptionsItemSelected(item);
 	}
 
 	public void addListenerOnButtonRetour() {

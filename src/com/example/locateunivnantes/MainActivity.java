@@ -32,6 +32,9 @@ public class MainActivity extends Activity {
 		MenuInflater inflater = getMenuInflater();
 		inflater.inflate(R.menu.main, menu);
 		m = menu;
+		
+		m.findItem(R.id.item1).setEnabled(false);
+		
 		return true;
 	}
 

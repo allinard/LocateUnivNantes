@@ -1,8 +1,11 @@
 package com.example.locateunivnantes;
 
 import android.app.Activity;
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.Menu;
+import android.view.MenuInflater;
+import android.view.MenuItem;
 import android.widget.TextView;
 
 public class ItineraireActivity extends Activity{
@@ -29,12 +32,38 @@ public class ItineraireActivity extends Activity{
     }
 
 
-    @Override
-    public boolean onCreateOptionsMenu(Menu menu) {
-        // Inflate the menu; this adds items to the action bar if it is present.
-        getMenuInflater().inflate(R.menu.main, menu);
-        return true;
-    }
+	private Menu m = null;
+
+	@Override
+	public boolean onCreateOptionsMenu(Menu menu) {
+		MenuInflater inflater = getMenuInflater();
+		inflater.inflate(R.menu.main, menu);
+		m = menu;
+		return true;
+	}
+
+	@Override
+	public boolean onOptionsItemSelected(MenuItem item) {
+		switch (item.getItemId()) {
+		case R.id.item1:
+			Intent intent1 = new Intent(ItineraireActivity.this,
+					MainActivity.class);
+			startActivity(intent1);
+			return true;
+		case R.id.item2:
+			return true;
+		case R.id.item3:
+			return true;
+		case R.id.item4:
+			return true;
+		case R.id.item5:
+			Intent intent = new Intent(ItineraireActivity.this,
+					AideActivity.class);
+			startActivity(intent);
+			return true;
+		}
+		return super.onOptionsItemSelected(item);
+	}
 
     
 	
