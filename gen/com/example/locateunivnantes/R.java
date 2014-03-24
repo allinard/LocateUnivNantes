@@ -42,7 +42,6 @@ public final class R {
         public static final int logounivnantes=0x7f020002;
     }
     public static final class id {
-        public static final int action_settings=0x7f06002c;
         /**  Messages IDs 
          */
         public static final int auto_focus=0x7f060000;
@@ -66,6 +65,11 @@ public final class R {
         public static final int format_text_view_label=0x7f06001e;
         public static final int imageView1=0x7f060016;
         public static final int image_view=0x7f060029;
+        public static final int item1=0x7f06002c;
+        public static final int item2=0x7f06002d;
+        public static final int item3=0x7f06002e;
+        public static final int item4=0x7f06002f;
+        public static final int item5=0x7f060030;
         public static final int lblListHeader=0x7f06002a;
         public static final int lblListItem=0x7f06002b;
         public static final int lvExp=0x7f060009;
