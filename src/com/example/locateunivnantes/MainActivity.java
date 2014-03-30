@@ -13,7 +13,6 @@ import android.widget.Button;
 public class MainActivity extends Activity {
 
 	Button buttonEntrer;
-	Button buttonQuitter;
 	Button buttonAide;
 
 	@Override
@@ -21,7 +20,6 @@ public class MainActivity extends Activity {
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.activity_main);
 		addListenerOnButtonEntrer();
-		addListenerOnButtonQuitter();
 		addListenerOnButtonAide();
 	}
 
@@ -71,17 +69,7 @@ public class MainActivity extends Activity {
 		});
 	}
 
-	public void addListenerOnButtonQuitter() {
-		buttonQuitter = (Button) findViewById(R.id.btnQuitter);
-		buttonQuitter.setOnClickListener(new OnClickListener() {
-			@Override
-			public void onClick(View arg0) {
-				finish();
-				System.exit(0);
-			}
 
-		});
-	}
 
 	public void addListenerOnButtonAide() {
 		buttonAide = (Button) findViewById(R.id.btnAide);

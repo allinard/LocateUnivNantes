@@ -22,14 +22,14 @@ import android.widget.Toast;
 
 public class ChoixDestinationActivity extends Activity {
 
-	Button buttonRetour;
+	
 	Button buttonOK;
 	ExpandableListAdapter listAdapter;
 	ExpandableListView listBatimentsSalles;
 	List<String> listDataHeader = new ArrayList<String>();
 	HashMap<String, List<String>> listDataChild = new HashMap<String, List<String>>();
 	private String salleSelected;
-
+	
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
@@ -47,7 +47,6 @@ public class ChoixDestinationActivity extends Activity {
 		// setting list adapter
 		listBatimentsSalles.setAdapter(listAdapter);
 
-		addListenerOnButtonRetour();
 		addListenerOnButtonOK();
 		addListenerOnListBatimentsSalles();
 	}
@@ -83,16 +82,6 @@ public class ChoixDestinationActivity extends Activity {
 			return true;
 		}
 		return super.onOptionsItemSelected(item);
-	}
-	public void addListenerOnButtonRetour() {
-		buttonRetour = (Button) findViewById(R.id.btnRetour);
-		buttonRetour.setOnClickListener(new OnClickListener() {
-			@Override
-			public void onClick(View arg0) {
-				finish();
-			}
-
-		});
 	}
 
 	public void addListenerOnButtonOK() {

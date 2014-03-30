@@ -17,14 +17,13 @@ import android.widget.Toast;
 
 public class LoginActivity extends Activity {
 
-	Button buttonRetour;
+
 	Button buttonLogin;
 
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.activity_login);
-		addListenerOnButtonRetour();
 		addListenerOnButtonLogin();
 	}
 
@@ -61,16 +60,7 @@ public class LoginActivity extends Activity {
 		return super.onOptionsItemSelected(item);
 	}
 
-	public void addListenerOnButtonRetour() {
-		buttonRetour = (Button) findViewById(R.id.btnRetour);
-		buttonRetour.setOnClickListener(new OnClickListener() {
-			@Override
-			public void onClick(View arg0) {
-				finish();
-			}
-
-		});
-	}
+	
 
 	public void addListenerOnButtonLogin() {
 		buttonLogin = (Button) findViewById(R.id.btnLogin);
@@ -83,7 +73,7 @@ public class LoginActivity extends Activity {
 				LoginCASUnivNantes loginCASUnivNantes = LoginCASUnivNantes.getInstance();
 				if(loginCASUnivNantes.logIn(login.getText().toString(), password.getText().toString())){
 					Intent intent = new Intent(LoginActivity.this,
-							ChoixDestinationActivity.class);
+							ChoixActionActivity.class);
 					startActivity(intent);
 				}
 				else{

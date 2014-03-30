@@ -22,7 +22,7 @@ import android.widget.Toast;
 
 public class ChoixOrigineBatimentActivity extends Activity {
 
-	Button buttonRetour;
+	
 	Button buttonOK;
 	ExpandableListAdapter listAdapter;
 	ExpandableListView listBatimentsSalles;
@@ -48,7 +48,7 @@ public class ChoixOrigineBatimentActivity extends Activity {
 		// setting list adapter
 		listBatimentsSalles.setAdapter(listAdapter);
 
-		addListenerOnButtonRetour();
+		
 		addListenerOnButtonOK();
 		addListenerOnListBatimentsSalles();
 
@@ -89,16 +89,6 @@ public class ChoixOrigineBatimentActivity extends Activity {
 		return super.onOptionsItemSelected(item);
 	}
 
-	public void addListenerOnButtonRetour() {
-		buttonRetour = (Button) findViewById(R.id.btnRetour);
-		buttonRetour.setOnClickListener(new OnClickListener() {
-			@Override
-			public void onClick(View arg0) {
-				finish();
-			}
-
-		});
-	}
 
 	public void addListenerOnButtonOK() {
 		buttonOK = (Button) findViewById(R.id.btnOK);

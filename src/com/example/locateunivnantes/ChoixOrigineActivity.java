@@ -1,5 +1,6 @@
 package com.example.locateunivnantes;
 
+import android.opengl.Visibility;
 import android.os.Bundle;
 import android.app.Activity;
 import android.content.Intent;
@@ -13,27 +14,35 @@ import android.widget.TextView;
 
 public class ChoixOrigineActivity extends Activity {
 
-	Button buttonRetour;
+
 	Button buttonQRCode;
 	Button buttonSalle;
 	
 	TextView salleDestination;
 	
 	private String salleSelected;
+	private boolean destinationPresente=true;
 
 
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.activity_choix_origine);
-		addListenerOnButtonRetour();
 		addListenerOnButtonQRCode();
 		addListenerOnButtonSalle();
+		
+		Intent in = getIntent();
 		
 		Bundle b = getIntent().getExtras();
 		setSalleSelected(b.getString("destinationSalle"));
 		salleDestination = (TextView) findViewById(R.id.salleDestination);
 		salleDestination.setText(getSalleSelected());
+		destinationPresente = b.getBoolean("destinationPresente");
+		salleDestination.setText(getSalleSelected());
+		if (destinationPresente){
+			salleDestination.setVisibility(View.VISIBLE);
+		}
+		
 	}
 	
 	private Menu m = null;
@@ -69,16 +78,7 @@ public class ChoixOrigineActivity extends Activity {
 		return super.onOptionsItemSelected(item);
 	}
 
-	public void addListenerOnButtonRetour() {
-		buttonRetour = (Button) findViewById(R.id.btnRetour);
-		buttonRetour.setOnClickListener(new OnClickListener() {
-			@Override
-			public void onClick(View arg0) {
-				finish();
-			}
-
-		});
-	}
+	
 	
 	public void addListenerOnButtonQRCode() {
 		buttonQRCode = (Button) findViewById(R.id.btnQRCode);

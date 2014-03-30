@@ -14,15 +14,6 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent" >
 
-        <Button
-            android:id="@+id/btnRetour"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_alignParentBottom="true"
-            android:layout_alignParentRight="true"
-            android:layout_marginBottom="17dp"
-            android:layout_marginRight="23dp"
-            android:text="Retour" />
 
         <Button
             android:id="@+id/btnOK"
