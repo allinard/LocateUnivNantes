@@ -89,7 +89,7 @@ public class ChoixDestinationActivity extends Activity {
 		buttonOK.setOnClickListener(new OnClickListener() {
 			@Override
 			public void onClick(View arg0) {
-				if(getSalleSelected().isEmpty()){
+				if(null == getSalleSelected()){
 					Toast.makeText(
 							getApplicationContext(),"Vous devez sélectionner une salle!", Toast.LENGTH_LONG).show();
 				}
