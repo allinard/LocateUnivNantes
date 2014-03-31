@@ -6,39 +6,18 @@
     android:paddingLeft="@dimen/activity_horizontal_margin"
     android:paddingRight="@dimen/activity_horizontal_margin"
     android:paddingTop="@dimen/activity_vertical_margin"
+    android:background="@color/white" 
     tools:context=".MainActivity" >
 
+    
     <ImageView
         android:id="@+id/imageView1"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_centerHorizontal="true"
-        android:src="@drawable/logounivnantes" />
+        android:layout_gravity="center"
+        android:src="@drawable/ic_logo_locunivnantes3" />
 
-    <Button
-        android:id="@+id/btnEntrer"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_centerHorizontal="true"
-        android:layout_centerVertical="true"
-        android:text="Entrer" />
 
-    <Button
-        android:id="@+id/btnQuitter"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_alignBaseline="@+id/btnAide"
-        android:layout_alignBottom="@+id/btnAide"
-        android:layout_alignParentRight="true"
-        android:text="Quitter" />
 
-    <Button
-        android:id="@+id/btnAide"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_alignParentBottom="true"
-        android:layout_marginBottom="39dp"
-        android:layout_toLeftOf="@+id/btnQuitter"
-        android:text="\?" />
 
 </RelativeLayout>

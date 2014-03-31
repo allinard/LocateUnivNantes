@@ -1,6 +1,7 @@
 package com.example.locateunivnantes;
 
 import android.os.Bundle;
+import android.os.Handler;
 import android.app.Activity;
 import android.content.Intent;
 import android.view.Menu;
@@ -9,19 +10,36 @@ import android.view.MenuItem;
 import android.view.View;
 import android.view.View.OnClickListener;
 import android.widget.Button;
+import android.widget.ImageView;
 
 public class MainActivity extends Activity {
 
 	Button buttonEntrer;
-	Button buttonAide;
+	ImageView image;
+
+	private final int DISPLAY_LENGTH = 3000;
 
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.activity_main);
-		addListenerOnButtonEntrer();
-		addListenerOnButtonAide();
-	}
+		
+		
+
+		/* New Handler to start the Menu-Activity
+		* and close this Splash-Screen after DISPLAY_LENGTH/1000 seconds.*/
+		new Handler().postDelayed(new Runnable(){
+
+		@Override
+		public void run() {
+		/* Create an Intent that will start the Main-Activity. */
+		Intent mainIntent = new Intent(MainActivity.this,LoginActivity.class);
+		MainActivity.this.startActivity(mainIntent);
+		MainActivity.this.finish();
+		}}, DISPLAY_LENGTH);
+		}
+	
+	
 
 	private Menu m = null;
 
@@ -30,9 +48,9 @@ public class MainActivity extends Activity {
 		MenuInflater inflater = getMenuInflater();
 		inflater.inflate(R.menu.main, menu);
 		m = menu;
-		
+
 		m.findItem(R.id.item1).setEnabled(false);
-		
+
 		return true;
 	}
 
@@ -56,32 +74,6 @@ public class MainActivity extends Activity {
 		return super.onOptionsItemSelected(item);
 	}
 
-	public void addListenerOnButtonEntrer() {
-		buttonEntrer = (Button) findViewById(R.id.btnEntrer);
-		buttonEntrer.setOnClickListener(new OnClickListener() {
-			@Override
-			public void onClick(View arg0) {
-				Intent intent = new Intent(MainActivity.this,
-						LoginActivity.class);
-				startActivity(intent);
-			}
 
-		});
-	}
-
-
-
-	public void addListenerOnButtonAide() {
-		buttonAide = (Button) findViewById(R.id.btnAide);
-		buttonAide.setOnClickListener(new OnClickListener() {
-			@Override
-			public void onClick(View arg0) {
-				Intent intent = new Intent(MainActivity.this,
-						AideActivity.class);
-				startActivity(intent);
-			}
-
-		});
-	}
 
 }
