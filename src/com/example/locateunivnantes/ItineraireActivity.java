@@ -1,17 +1,32 @@
 package com.example.locateunivnantes;
 
+import pl.polidea.view.ZoomView;
 import android.app.Activity;
+import android.content.Context;
 import android.content.Intent;
 import android.os.Bundle;
+import android.provider.ContactsContract.CommonDataKinds.Photo;
+import android.view.LayoutInflater;
 import android.view.Menu;
 import android.view.MenuInflater;
 import android.view.MenuItem;
+import android.view.View;
+import android.view.ViewGroup.LayoutParams;
+import android.widget.HorizontalScrollView;
+import android.widget.ImageView;
+import android.widget.LinearLayout;
+import android.widget.RelativeLayout;
+import android.widget.ScrollView;
 import android.widget.TextView;
 
 public class ItineraireActivity extends Activity{
 
 	TextView txtDestination;
 	TextView txtOrigine;
+	ImageView imageView;
+	ZoomView zoomView;	
+	RelativeLayout itineraire;
+	
 	
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -27,8 +42,21 @@ public class ItineraireActivity extends Activity{
 		
 		txtOrigine = (TextView) findViewById(R.id.txtOrigine);
 		txtOrigine.setText(b.getString("origineSalle"));
-
-
+		
+		imageView = (ImageView) findViewById(R.id.imgBat);
+		
+		
+		itineraire = (RelativeLayout) findViewById(R.id.activity_itineraire);
+		View v = ((LayoutInflater) getSystemService(Context.LAYOUT_INFLATER_SERVICE)).inflate(R.layout.zoomableview, null, false);
+		v.setLayoutParams(new LinearLayout.LayoutParams(LayoutParams.FILL_PARENT, LayoutParams.FILL_PARENT));
+		zoomView = new ZoomView(this);
+		zoomView.addView(v);
+		HorizontalScrollView hscrollView = new HorizontalScrollView(this);
+		hscrollView.addView(zoomView);
+		ScrollView vscrollView = new ScrollView(this);
+		vscrollView.addView(hscrollView);
+		itineraire.addView(vscrollView);
+		
     }
 
 
