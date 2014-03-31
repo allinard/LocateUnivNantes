@@ -22,7 +22,6 @@ import android.widget.Toast;
 
 public class ChoixOrigineBatimentActivity extends Activity {
 
-	
 	Button buttonOK;
 	ExpandableListAdapter listAdapter;
 	ExpandableListView listBatimentsSalles;
@@ -48,7 +47,6 @@ public class ChoixOrigineBatimentActivity extends Activity {
 		// setting list adapter
 		listBatimentsSalles.setAdapter(listAdapter);
 
-		
 		addListenerOnButtonOK();
 		addListenerOnListBatimentsSalles();
 
@@ -89,13 +87,12 @@ public class ChoixOrigineBatimentActivity extends Activity {
 		return super.onOptionsItemSelected(item);
 	}
 
-
 	public void addListenerOnButtonOK() {
 		buttonOK = (Button) findViewById(R.id.btnOK);
 		buttonOK.setOnClickListener(new OnClickListener() {
 			@Override
 			public void onClick(View arg0) {
-				if (getSalleSelected().isEmpty()) {
+				if (null == getSalleSelected()) {
 					Toast.makeText(getApplicationContext(),
 							"Vous devez sélectionner une salle!",
 							Toast.LENGTH_LONG).show();

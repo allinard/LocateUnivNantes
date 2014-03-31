@@ -31,8 +31,6 @@ public class ChoixOrigineActivity extends Activity {
 		addListenerOnButtonQRCode();
 		addListenerOnButtonSalle();
 		
-		Intent in = getIntent();
-		
 		Bundle b = getIntent().getExtras();
 		setSalleSelected(b.getString("destinationSalle"));
 		salleDestination = (TextView) findViewById(R.id.salleDestination);
