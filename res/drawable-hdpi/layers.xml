@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layer-list xmlns:android="http://schemas.android.com/apk/res/android">
+    <item>
+      <bitmap android:src="@drawable/bat14e0"
+        android:gravity="center" />
+    </item>
+    <item android:top="20dp" android:left="20dp">
+      <bitmap android:src="@drawable/depart"
+        android:gravity="center" />
+    </item>
+    <item android:top="80dp" android:left="50dp">
+      <bitmap android:src="@drawable/arrive"
+        android:gravity="center" />
+    </item>
+</layer-list>
