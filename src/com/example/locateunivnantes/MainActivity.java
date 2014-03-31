@@ -15,7 +15,8 @@ import android.widget.ImageView;
 public class MainActivity extends Activity {
 
 	Button buttonEntrer;
-	ImageView image;
+	ImageView imageLogo;
+	ImageView imageName;
 
 	private final int DISPLAY_LENGTH = 3000;
 

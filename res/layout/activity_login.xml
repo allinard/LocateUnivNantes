@@ -30,6 +30,7 @@
 
     <Button
         android:id="@+id/btnLogin"
+        style="@style/btnStyleSeagull"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_below="@+id/editTextPassWd"
@@ -37,14 +38,6 @@
         android:layout_marginTop="82dp"
         android:text="Login" />
 
-    <Button
-        android:id="@+id/btnRetour"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_alignParentBottom="true"
-        android:layout_alignParentRight="true"
-        android:layout_marginBottom="27dp"
-        android:layout_marginRight="18dp"
-        android:text="Retour" />
+    
 
 </RelativeLayout>

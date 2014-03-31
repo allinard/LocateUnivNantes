@@ -5,32 +5,53 @@
     android:gravity="center"
     android:orientation="vertical" >
 
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent" >
+    <ImageView
+        android:id="@+id/imageView1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="top"
+        android:layout_alignParentTop="true"
+        android:scaleX="0.50"
+        android:scaleY="0.50"
+        android:src="@drawable/ic_logo_locunivnantes" />
+	
     <TextView
         android:id="@+id/textView"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_alignParentRight="true"
-        android:layout_below="@+id/textView"
-        android:layout_marginTop="68dp"
-        android:text="Sélectionnez un mode de localisation :"
+        android:layout_below="@+id/imageView1"
+        android:gravity="left"
+        android:layout_centerInParent="true"
+        android:textSize="12pt"
+        android:textStyle="bold"
+        
+        android:layout_marginBottom="10dp"
+        android:text="Sélectionnez un mode :"
         android:textAppearance="?android:attr/textAppearanceMedium" />
 
     <Button
         android:id="@+id/btnAller"
-        android:layout_width="wrap_content"
+        style="@style/btnStyleSeagull"
+        android:layout_width="fill_parent"
         android:layout_height="wrap_content"
         android:layout_centerHorizontal="true"
         android:layout_centerInParent="true"
-        android:layout_gravity="center_horizontal"
+        android:layout_below="@+id/textView"
         android:text="Aller vers" />
 
     <Button
         android:id="@+id/btnOu"
-        android:layout_width="wrap_content"
+        style="@style/btnStyleSeagull"
+        android:layout_width="fill_parent"
         android:layout_height="wrap_content"
         android:layout_centerHorizontal="true"
         android:layout_centerInParent="true"
-        android:layout_gravity="center_horizontal"
+        android:layout_marginTop="20dp"
+        android:layout_below="@+id/btnAller"
         android:text="Où suis-je ?" />
+    </RelativeLayout>
 
 </LinearLayout>
