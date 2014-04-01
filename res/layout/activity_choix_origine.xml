@@ -1,15 +1,19 @@
 <?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent" >
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent" >
     
-     
+
     <ImageView
         android:id="@+id/imageView1"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_gravity="top"
         android:layout_alignParentTop="true"
+        android:layout_gravity="top"
         android:scaleX="0.50"
         android:scaleY="0.50"
         android:src="@drawable/ic_logo_locunivnantes" />
@@ -18,61 +22,62 @@
         android:id="@+id/textView3"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_bottom="@+id/imageView1"
-        android:layout_below="@+id/textView1"
-        android:gravity="left"
+        android:layout_below="@+id/imageView1"
         android:layout_centerInParent="true"
-        android:textSize="12pt"
-        android:textStyle="bold"
-        
         android:layout_marginBottom="10dp"
+        android:gravity="left"
         android:text="Sélectionnez un mode de localisation :"
-        android:textAppearance="?android:attr/textAppearanceMedium" />
-        
-        
+        android:textAppearance="?android:attr/textAppearanceMedium"
+        android:textSize="12pt"
+        android:textStyle="bold" />
+
     <TextView
         android:id="@+id/textView1"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_alignLeft="@+id/textView3"
-        android:gravity="left"
         android:layout_alignParentTop="true"
-        android:textSize="12pt"
-        android:textStyle="bold"
-        android:layout_marginTop="24dp"
         android:layout_marginBottom="10dp"
+        android:layout_marginTop="24dp"
+        android:gravity="left"
         android:text="Vous allez :"
-        android:textAppearance="?android:attr/textAppearanceMedium" />
+        android:textAppearance="?android:attr/textAppearanceMedium"
+        android:textSize="12pt"
+        android:textStyle="bold" />
 
-        <TextView
-            android:id="@+id/salleDestination"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_above="@+id/textView3"
-            android:layout_marginLeft="14dp"
-            android:layout_toRightOf="@+id/textView1"
-            android:text="salleXX" />
+    <TextView
+        android:id="@+id/salleDestination"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_above="@+id/textView3"
+        android:layout_marginLeft="14dp"
+        android:layout_toRightOf="@+id/textView1"
+        android:text="salleXX" />
 
-        <Button
-            android:id="@+id/btnQRCode"
-            style="@style/btnStyleSeagull"
-            android:layout_width="fill_parent"
-            android:layout_height="wrap_content"
-            android:layout_alignRight="@+id/salleDestination"
-            android:layout_below="@+id/textView3"
-            android:layout_marginRight="19dp"
-            android:layout_marginTop="56dp"
-            android:text="QRCode" />
+    <Button
+        android:id="@+id/btnQRCode"
+        style="@style/btnStyleSeagull"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignRight="@+id/salleDestination"
+        android:layout_below="@+id/textView3"
+        android:layout_marginRight="19dp"
+        android:layout_marginTop="56dp"
+        android:text="QRCode" />
 
-        <Button
-            android:id="@+id/btnSalle"
-            style="@style/btnStyleSeagull"
-            android:layout_width="fill_parent"
-            android:layout_height="wrap_content"
-            android:layout_alignBaseline="@+id/btnQRCode"
-            android:layout_alignBottom="@+id/btnQRCode"
-            android:layout_marginLeft="26dp"
-            android:layout_bottom="@+id/btnQRCode"
-            android:text="Salle" />
-        
+    <Button
+        android:id="@+id/btnSalle"
+        style="@style/btnStyleSeagull"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignBaseline="@+id/btnQRCode"
+        android:layout_alignBottom="@+id/btnQRCode"
+        android:layout_below="@+id/btnQRCode"
+        android:layout_marginLeft="26dp"
+        android:text="Salle" />
+
+
+
 </RelativeLayout>
+
+</LinearLayout>
