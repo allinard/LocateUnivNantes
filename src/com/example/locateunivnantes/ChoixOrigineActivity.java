@@ -40,6 +40,10 @@ public class ChoixOrigineActivity extends Activity {
 		if (destinationPresente){
 			salleDestination.setVisibility(View.VISIBLE);
 		}
+		else
+		{
+			salleDestination.setVisibility(View.INVISIBLE);
+		}
 		
 	}
 	
