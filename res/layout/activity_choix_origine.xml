@@ -59,21 +59,21 @@
         style="@style/btnStyleSeagull"
         android:layout_width="fill_parent"
         android:layout_height="wrap_content"
-        android:layout_alignRight="@+id/salleDestination"
+        android:layout_centerHorizontal="true"
+        android:layout_centerInParent="true"
+        android:layout_marginTop="5dp"
         android:layout_below="@+id/textView3"
-        android:layout_marginRight="19dp"
-        android:layout_marginTop="56dp"
         android:text="QRCode" />
 
-    <Button
+   <Button
         android:id="@+id/btnSalle"
         style="@style/btnStyleSeagull"
         android:layout_width="fill_parent"
         android:layout_height="wrap_content"
-        android:layout_alignBaseline="@+id/btnQRCode"
-        android:layout_alignBottom="@+id/btnQRCode"
+        android:layout_centerHorizontal="true"
+        android:layout_centerInParent="true"
+        android:layout_marginTop="20dp"
         android:layout_below="@+id/btnQRCode"
-        android:layout_marginLeft="26dp"
         android:text="Salle" />
 
 
