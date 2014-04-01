@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="utf-8"?>
+<fac>
+	<batiment num="14">
+		<etage num="2">
+			<salle nom="50"/>
+			<salle nom="51"/>
+			<salle nom="52"/>
+			<salle nom="53"/>
+			<salle nom="55"/>
+			<salle nom="60"/>
+			<salle nom="63"/>
+			<salle nom="65"/>
+		</etage>
+		<etage num="1">
+			<salle nom="40"/>
+			<salle nom="41"/>
+			<salle nom="42"/>
+			<salle nom="43"/>
+			<salle nom="44"/>
+			<salle nom="45"/>
+			<salle nom="46"/>
+			<salle nom="47"/>
+			<salle nom="48"/>
+			<salle nom="49"/>
+		</etage>
+		<etage num="0">
+			<salle nom="33"/>
+			<salle nom="33.1"/>
+			<salle nom="34"/>
+			<salle nom="35"/>
+			<salle nom="35.1"/>
+			<salle nom="36"/>
+			<salle nom="37"/>
+			<salle nom="37.1"/>
+			<salle nom="38"/>
+			<salle nom="38.1"/>
+			<salle nom="39"/>
+		</etage>
+	</batiment>
+	<batiment num="15">
+		<etage num="1">
+			<salle nom="I121"/>
+			<salle nom="I122"/>
+			<salle nom="I123"/>
+			<salle nom="I124"/>
+			<salle nom="I125"/>
+		</etage>
+		<etage num="0">
+			<salle nom="I011"/>
+			<salle nom="I012"/>
+			<salle nom="I019"/>
+		</etage>
+		<etage num="-1">
+			<salle nom="I01"/>
+			<salle nom="I02"/>
+			<salle nom="I03"/>
+			<salle nom="I04"/>
+			<salle nom="I05"/>
+		</etage>
+	</batiment>
+</fac>
