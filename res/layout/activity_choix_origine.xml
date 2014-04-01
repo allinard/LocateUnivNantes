@@ -37,7 +37,7 @@
         <Button
             android:id="@+id/btnQRCode"
             style="@style/btnStyleSeagull"
-            android:layout_width="wrap_content"
+            android:layout_width="fill_parent"
             android:layout_height="wrap_content"
             android:layout_alignRight="@+id/salleDestination"
             android:layout_below="@+id/textView3"
@@ -48,12 +48,12 @@
         <Button
             android:id="@+id/btnSalle"
             style="@style/btnStyleSeagull"
-            android:layout_width="wrap_content"
+            android:layout_width="fill_parent"
             android:layout_height="wrap_content"
             android:layout_alignBaseline="@+id/btnQRCode"
             android:layout_alignBottom="@+id/btnQRCode"
             android:layout_marginLeft="26dp"
-            android:layout_toRightOf="@+id/btnQRCode"
+            android:layout_bottom="@+id/btnQRCode"
             android:text="Salle" />
         
 </RelativeLayout>
