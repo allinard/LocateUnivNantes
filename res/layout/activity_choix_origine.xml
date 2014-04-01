@@ -3,27 +3,46 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent" >
     
+     
+    <ImageView
+        android:id="@+id/imageView1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="top"
+        android:layout_alignParentTop="true"
+        android:scaleX="0.50"
+        android:scaleY="0.50"
+        android:src="@drawable/ic_logo_locunivnantes" />
 
-       
-        <TextView
-            android:id="@+id/textView3"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_alignParentRight="true"
-            android:layout_below="@+id/textView1"
-            android:layout_marginTop="68dp"
-            android:text="Sélectionnez un mode de localisation :"
-            android:textAppearance="?android:attr/textAppearanceMedium" />
-
-        <TextView
-            android:id="@+id/textView1"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_alignLeft="@+id/textView3"
-            android:layout_alignParentTop="true"
-            android:layout_marginTop="24dp"
-            android:text="Vous allez :"
-            android:textAppearance="?android:attr/textAppearanceMedium" />
+    <TextView
+        android:id="@+id/textView3"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_bottom="@+id/imageView1"
+        android:layout_below="@+id/textView1"
+        android:gravity="left"
+        android:layout_centerInParent="true"
+        android:textSize="12pt"
+        android:textStyle="bold"
+        
+        android:layout_marginBottom="10dp"
+        android:text="Sélectionnez un mode de localisation :"
+        android:textAppearance="?android:attr/textAppearanceMedium" />
+        
+        
+    <TextView
+        android:id="@+id/textView1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignLeft="@+id/textView3"
+        android:gravity="left"
+        android:layout_alignParentTop="true"
+        android:textSize="12pt"
+        android:textStyle="bold"
+        android:layout_marginTop="24dp"
+        android:layout_marginBottom="10dp"
+        android:text="Vous allez :"
+        android:textAppearance="?android:attr/textAppearanceMedium" />
 
         <TextView
             android:id="@+id/salleDestination"
