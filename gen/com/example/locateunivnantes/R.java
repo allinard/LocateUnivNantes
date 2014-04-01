@@ -11,6 +11,7 @@ public final class R {
     public static final class attr {
     }
     public static final class color {
+        public static final int bg_blue_light=0x7f04000f;
         public static final int contents_text=0x7f040001;
         public static final int encode_view=0x7f040002;
         public static final int possible_result_points=0x7f040003;
