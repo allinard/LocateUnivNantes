@@ -19,6 +19,7 @@ public class ChoixOrigineActivity extends Activity {
 	Button buttonSalle;
 	
 	TextView salleDestination;
+	TextView textView1;
 	
 	private String salleSelected;
 	private boolean destinationPresente=true;
@@ -35,15 +36,18 @@ public class ChoixOrigineActivity extends Activity {
 		setSalleSelected(b.getString("destinationSalle"));
 		salleDestination = (TextView) findViewById(R.id.salleDestination);
 		salleDestination.setText(getSalleSelected());
-		destinationPresente = b.getBoolean("destinationPresente");
+		if (b.containsKey("destinationPresente"))destinationPresente = b.getBoolean("destinationPresente");
 		salleDestination.setText(getSalleSelected());
-		if (destinationPresente){
-			salleDestination.setVisibility(View.VISIBLE);
-		}
-		else
-		{
+		textView1 = (TextView) findViewById(R.id.textView1);
+		if (!destinationPresente){
 			salleDestination.setVisibility(View.INVISIBLE);
+			textView1.setVisibility(View.INVISIBLE);
 		}
+		/*else
+		{
+			salleDestination.setVisibility(View.VISIBLE);
+			textView1.setVisibility(View.VISIBLE);
+		}*/
 		
 	}
 	

@@ -35,13 +35,13 @@ public class ChoixActionActivity extends Activity {
 	
 	private void addListenerOnButtonAllerVers() {
 		buttonAllerVers = (Button) findViewById(R.id.btnAller);
-		destinationPresente=true;
+		
 		buttonAllerVers.setOnClickListener(new OnClickListener() {
 			@Override
 			public void onClick(View arg0) {
+				
 				Intent intent = new Intent(ChoixActionActivity.this,
 						ChoixDestinationActivity.class);
-				intent.putExtra("destinationPresente", getDestinationPresente());
 				startActivity(intent);
 			}
 
@@ -53,10 +53,11 @@ public class ChoixActionActivity extends Activity {
 
 	private void addListenerOnButtonOuSuisJe() {
 		buttonOuSuisJe = (Button) findViewById(R.id.btnOu);
-		destinationPresente=false;
+		
 		buttonOuSuisJe.setOnClickListener(new OnClickListener() {
 			@Override
 			public void onClick(View arg0) {
+				
 				Intent intent = new Intent(ChoixActionActivity.this,
 						ChoixOrigineActivity.class);
 				intent.putExtra("destinationPresente", getDestinationPresente());
