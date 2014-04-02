@@ -12,11 +12,12 @@
         android:id="@+id/imageView1"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_gravity="top"
+        android:layout_marginTop="40dp"
+        android:layout_centerHorizontal="true"
         android:layout_alignParentTop="true"
-        android:scaleX="0.50"
-        android:scaleY="0.50"
-        android:src="@drawable/ic_logo_locunivnantes" />
+        android:scaleX="1.30"
+        android:scaleY="1.30"
+        android:src="@drawable/test4"  />
 	
     <TextView
         android:id="@+id/textView"
@@ -27,7 +28,7 @@
         android:layout_centerInParent="true"
         android:textSize="12pt"
         android:textStyle="bold"
-        
+        android:layout_marginTop="60dp"
         android:layout_marginBottom="10dp"
         android:text="Sélectionnez un mode :"
         android:textAppearance="?android:attr/textAppearanceMedium" />

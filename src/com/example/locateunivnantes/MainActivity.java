@@ -67,6 +67,14 @@ public class MainActivity extends Activity {
 		case R.id.item4:
 			return true;
 		case R.id.item5:
+			return true;
+		case R.id.item7:
+			return true;
+		case R.id.item8:
+			return true;
+		case R.id.item9:
+			return true;
+		case R.id.item6:
 			Intent intent = new Intent(MainActivity.this,
 					AideActivity.class);
 			startActivity(intent);

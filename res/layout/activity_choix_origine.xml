@@ -7,43 +7,17 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent" >
     
-
-    <ImageView
-        android:id="@+id/imageView1"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_alignParentTop="true"
-        android:layout_gravity="top"
-        android:scaleX="0.50"
-        android:scaleY="0.50"
-        android:src="@drawable/ic_logo_locunivnantes" />
-
-    <TextView
-        android:id="@+id/textView3"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_below="@+id/imageView1"
-        android:layout_centerInParent="true"
-        android:layout_marginBottom="10dp"
-        android:gravity="left"
-        android:text="Sélectionnez un mode de localisation :"
-        android:textAppearance="?android:attr/textAppearanceMedium"
-        android:textSize="12pt"
-        android:textStyle="bold" />
-
     <TextView
         android:id="@+id/textView1"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_marginLeft="5dp"
+        android:layout_marginTop="5dp"
         android:layout_alignLeft="@+id/textView3"
-        android:layout_alignParentTop="true"
-        android:layout_marginBottom="10dp"
-        android:layout_marginTop="24dp"
-        android:gravity="left"
-        android:text="Vous allez :"
+        android:text="Votre destination est:"
         android:textAppearance="?android:attr/textAppearanceMedium"
-        android:textSize="12pt"
-        android:textStyle="bold" />
+        android:textSize="8pt"
+        android:textStyle="normal" />
 
     <TextView
         android:id="@+id/salleDestination"
@@ -51,8 +25,36 @@
         android:layout_height="wrap_content"
         android:layout_above="@+id/textView3"
         android:layout_marginLeft="14dp"
+        android:layout_marginTop="5dp"
         android:layout_toRightOf="@+id/textView1"
-        android:text="salleXX" />
+        android:text="salleXX" 
+        android:textSize="10pt"
+        android:textStyle="bold"/>
+    
+    <ImageView
+        android:id="@+id/imageView1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="20dp"
+        android:layout_below="@+id/textView1"
+        android:layout_gravity="center"
+        android:layout_centerHorizontal="true"
+        android:scaleX="1.30"
+        android:scaleY="1.30"
+        android:src="@drawable/test4" />
+
+    <TextView
+        android:id="@+id/textView3"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/imageView1"
+        android:layout_marginTop="60dp"
+        android:layout_centerHorizontal="true"
+        android:text=" Localisez-vous :"
+        android:textAppearance="?android:attr/textAppearanceMedium"
+        android:textSize="12pt"
+        android:textStyle="bold" />
+    
 
     <Button
         android:id="@+id/btnQRCode"
@@ -72,7 +74,7 @@
         android:layout_height="wrap_content"
         android:layout_centerHorizontal="true"
         android:layout_centerInParent="true"
-        android:layout_marginTop="20dp"
+        android:layout_marginTop="15dp"
         android:layout_below="@+id/btnQRCode"
         android:text="Salle" />
 

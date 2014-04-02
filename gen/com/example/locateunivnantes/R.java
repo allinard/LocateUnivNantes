@@ -60,6 +60,10 @@ public final class R {
         public static final int namea=0x7f020012;
         public static final int nameb=0x7f020013;
         public static final int nameg=0x7f020014;
+        public static final int test=0x7f020015;
+        public static final int test2=0x7f020016;
+        public static final int test3=0x7f020017;
+        public static final int test4=0x7f020018;
     }
     public static final class id {
         public static final int activity_itineraire=0x7f060014;
@@ -93,6 +97,10 @@ public final class R {
         public static final int item3=0x7f060032;
         public static final int item4=0x7f060033;
         public static final int item5=0x7f060034;
+        public static final int item6=0x7f060038;
+        public static final int item7=0x7f060035;
+        public static final int item8=0x7f060036;
+        public static final int item9=0x7f060037;
         public static final int lblListHeader=0x7f06002d;
         public static final int lblListItem=0x7f06002e;
         public static final int lvExp=0x7f06000e;
