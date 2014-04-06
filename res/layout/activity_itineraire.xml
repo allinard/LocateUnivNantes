@@ -3,8 +3,13 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:id="@+id/activity_itineraire" >
-
-    <TextView
+    
+    <RelativeLayout
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:id="@+id/activity_itineraire1" >
+        
+         <TextView
         android:id="@+id/textView2"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
@@ -42,5 +47,34 @@
         android:layout_alignBottom="@+id/textView4"
         android:layout_toRightOf="@+id/textView4"
         android:text="TextView" />
+
+    <Button
+        android:id="@+id/btnChangeBat"
+        style="?android:attr/buttonStyleSmall"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignBaseline="@+id/txtOrigine"
+        android:layout_alignBottom="@+id/txtOrigine"
+        android:layout_alignParentRight="true"
+        android:layout_marginRight="24dp"
+        android:text="->" />
+        
+    </RelativeLayout>
+    
+    
+    
+    
+    
+    
+    
+    
+    <RelativeLayout
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:id="@+id/activity_itineraire2" >
+        
+        
+    </RelativeLayout>
+   
 
 </RelativeLayout>

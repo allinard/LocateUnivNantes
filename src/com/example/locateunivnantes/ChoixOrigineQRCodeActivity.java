@@ -34,8 +34,6 @@ public class ChoixOrigineQRCodeActivity extends DecoderActivity {
 			.getSimpleName();
 	private static final Set<ResultMetadataType> DISPLAYABLE_METADATA_TYPES = EnumSet
 			.of(ResultMetadataType.ISSUE_NUMBER,
-					ResultMetadataType.SUGGESTED_PRICE,
-					ResultMetadataType.ERROR_CORRECTION_LEVEL,
 					ResultMetadataType.POSSIBLE_COUNTRY);
 
 	private TextView statusView = null;
@@ -91,21 +89,11 @@ public class ChoixOrigineQRCodeActivity extends DecoderActivity {
 	@Override
 	public void handleDecode(Result rawResult, Bitmap barcode) {
 		drawResultPoints(barcode, rawResult);
-
-		// ResultHandler resultHandler =
-		// ResultHandlerFactory.makeResultHandler(this, rawResult);
-		// handleDecodeInternally(rawResult, resultHandler, barcode);
-
-		// Toast.makeText(getApplicationContext(),
-		// rawResult.getText(),
-		// Toast.LENGTH_LONG).show();
-
 		Intent intent = new Intent(ChoixOrigineQRCodeActivity.this,
 				ItineraireActivity.class);
 		intent.putExtra("destinationSalle", getSalleDestination());
 		intent.putExtra("origineSalle", rawResult.getText());
 		startActivity(intent);
-
 	}
 
 	protected void showScanner() {
@@ -121,63 +109,6 @@ public class ChoixOrigineQRCodeActivity extends DecoderActivity {
 		statusView.setVisibility(View.GONE);
 		viewfinderView.setVisibility(View.GONE);
 		resultView.setVisibility(View.VISIBLE);
-	}
-
-	// Put up our own UI for how to handle the decodBarcodeFormated contents.
-	private void handleDecodeInternally(Result rawResult,
-			ResultHandler resultHandler, Bitmap barcode) {
-		onPause();
-		showResults();
-
-		ImageView barcodeImageView = (ImageView) findViewById(R.id.barcode_image_view);
-		if (barcode == null) {
-			barcodeImageView.setImageBitmap(BitmapFactory.decodeResource(
-					getResources(), R.drawable.icon));
-		} else {
-			barcodeImageView.setImageBitmap(barcode);
-		}
-
-		TextView formatTextView = (TextView) findViewById(R.id.format_text_view);
-		formatTextView.setText(rawResult.getBarcodeFormat().toString());
-
-		TextView typeTextView = (TextView) findViewById(R.id.type_text_view);
-		typeTextView.setText(resultHandler.getType().toString());
-
-		DateFormat formatter = DateFormat.getDateTimeInstance(DateFormat.SHORT,
-				DateFormat.SHORT);
-		String formattedTime = formatter.format(new Date(rawResult
-				.getTimestamp()));
-		TextView timeTextView = (TextView) findViewById(R.id.time_text_view);
-		timeTextView.setText(formattedTime);
-
-		TextView metaTextView = (TextView) findViewById(R.id.meta_text_view);
-		View metaTextViewLabel = findViewById(R.id.meta_text_view_label);
-		metaTextView.setVisibility(View.GONE);
-		metaTextViewLabel.setVisibility(View.GONE);
-		Map<ResultMetadataType, Object> metadata = rawResult
-				.getResultMetadata();
-		if (metadata != null) {
-			StringBuilder metadataText = new StringBuilder(20);
-			for (Map.Entry<ResultMetadataType, Object> entry : metadata
-					.entrySet()) {
-				if (DISPLAYABLE_METADATA_TYPES.contains(entry.getKey())) {
-					metadataText.append(entry.getValue()).append('\n');
-				}
-			}
-			if (metadataText.length() > 0) {
-				metadataText.setLength(metadataText.length() - 1);
-				metaTextView.setText(metadataText);
-				metaTextView.setVisibility(View.VISIBLE);
-				metaTextViewLabel.setVisibility(View.VISIBLE);
-			}
-		}
-
-		TextView contentsTextView = (TextView) findViewById(R.id.contents_text_view);
-		CharSequence displayContents = resultHandler.getDisplayContents();
-		contentsTextView.setText(displayContents);
-		// Crudely scale betweeen 22 and 32 -- bigger font for shorter text
-		int scaledSize = Math.max(22, 32 - displayContents.length() / 4);
-		contentsTextView.setTextSize(TypedValue.COMPLEX_UNIT_SP, scaledSize);
 	}
 
 	public String getSalleDestination() {

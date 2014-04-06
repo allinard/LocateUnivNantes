@@ -1,9 +1,21 @@
 package com.example.locateunivnantes;
 
+import java.util.List;
+
+import com.example.locateunivnantes.utils.ListDataUtil;
+import com.example.locateunivnantes.utils.LoginCASUnivNantes;
+import com.example.locateunivnantes.utils.beans.Batiment;
+import com.example.locateunivnantes.utils.beans.Salle;
+
 import pl.polidea.view.ZoomView;
 import android.app.Activity;
+import android.content.ClipData.Item;
 import android.content.Context;
 import android.content.Intent;
+import android.content.res.Resources;
+import android.graphics.drawable.BitmapDrawable;
+import android.graphics.drawable.Drawable;
+import android.graphics.drawable.LayerDrawable;
 import android.os.Bundle;
 import android.provider.ContactsContract.CommonDataKinds.Photo;
 import android.view.LayoutInflater;
@@ -11,13 +23,17 @@ import android.view.Menu;
 import android.view.MenuInflater;
 import android.view.MenuItem;
 import android.view.View;
+import android.view.View.OnClickListener;
 import android.view.ViewGroup.LayoutParams;
+import android.widget.Button;
+import android.widget.EditText;
 import android.widget.HorizontalScrollView;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.RelativeLayout;
 import android.widget.ScrollView;
 import android.widget.TextView;
+import android.widget.Toast;
 
 public class ItineraireActivity extends Activity{
 
@@ -26,27 +42,35 @@ public class ItineraireActivity extends Activity{
 	ImageView imageView;
 	ZoomView zoomView;	
 	RelativeLayout itineraire;
+	Button buttonChangeBat;
+
+	int imagePathDestination;
+	int imagePathOrigine;
+	
+	boolean onOrigine;
 	
 	
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_itineraire);
+        addListenerOnButtonChangeBat();
         
         Bundle b = getIntent().getExtras();
-		b.getString("destinationSalle");
-		b.getString("origineSalle");
+		
+        String destination = b.getString("destinationSalle");
+		String origine = b.getString("origineSalle");
+		imagePathDestination = choixImages(destination);
+		imagePathOrigine = choixImages(origine);
+		
 		
 		txtDestination = (TextView) findViewById(R.id.txtDestination);
-		txtDestination.setText(b.getString("destinationSalle"));
+		txtDestination.setText(destination);
 		
 		txtOrigine = (TextView) findViewById(R.id.txtOrigine);
-		txtOrigine.setText(b.getString("origineSalle"));
+		txtOrigine.setText(origine);
 		
-		imageView = (ImageView) findViewById(R.id.imgBat);
-		
-		
-		itineraire = (RelativeLayout) findViewById(R.id.activity_itineraire);
+		itineraire = (RelativeLayout) findViewById(R.id.activity_itineraire2);
 		View v = ((LayoutInflater) getSystemService(Context.LAYOUT_INFLATER_SERVICE)).inflate(R.layout.zoomableview, null, false);
 		v.setLayoutParams(new LinearLayout.LayoutParams(LayoutParams.FILL_PARENT, LayoutParams.FILL_PARENT));
 		zoomView = new ZoomView(this);
@@ -57,6 +81,12 @@ public class ItineraireActivity extends Activity{
 		vscrollView.addView(hscrollView);
 		itineraire.addView(vscrollView);
 		
+		LayerDrawable ld = (LayerDrawable) getResources().getDrawable(R.drawable.layers);		
+		Drawable replace = (Drawable) getResources().getDrawable(imagePathOrigine);
+		boolean testfactor = ld.setDrawableByLayerId(R.id.layerBat, replace);
+		ImageView layoutlist1 = (ImageView)findViewById(R.id.imgBat);
+		layoutlist1.setImageDrawable(ld);
+		onOrigine=true;
     }
 
 
@@ -101,6 +131,63 @@ public class ItineraireActivity extends Activity{
 		return super.onOptionsItemSelected(item);
 	}
 
+	
+	private int choixImages(String salle){
+		int s = 0;
+		boolean bool = false;
+		List<Batiment> listeBat = ListDataUtil.getListBatiments();
+		for(Batiment bat : listeBat){
+			for(Salle sa : bat.getSalles()){
+				if(sa.getNom().equals(salle)){
+					if(bat.getNumero().equals("14")&&sa.getEtage()==2){
+						s = R.drawable.bat14e2;
+					}else if(bat.getNumero().equals("14")&&sa.getEtage()==1){
+						s = R.drawable.bat14e1;
+					}else if(bat.getNumero().equals("14")&&sa.getEtage()==0){
+						s = R.drawable.bat14e0;
+					}else if(bat.getNumero().equals("15")&&sa.getEtage()==1){
+						s = R.drawable.bat15e1;
+					}else if(bat.getNumero().equals("15")&&sa.getEtage()==0){
+						s = R.drawable.bat15e0;
+					}else if(bat.getNumero().equals("15")&&sa.getEtage()==-1){
+						s = R.drawable.bat15ss;
+					}else{
+						s = R.drawable.bat14e1;
+					}
+					bool = true;
+					break;
+				}
+			}
+			if(bool){
+				break;
+			}
+		}
+		return s;
+	}
     
+	
+	
+	public void addListenerOnButtonChangeBat() {
+		buttonChangeBat = (Button) findViewById(R.id.btnChangeBat);
+		buttonChangeBat.setOnClickListener(new OnClickListener() {
+			@Override
+			public void onClick(View arg0) {
+				if(onOrigine){
+					LayerDrawable ld = (LayerDrawable) getResources().getDrawable(R.id.layerBat);		
+					Drawable replace = (Drawable) getResources().getDrawable(imagePathDestination);
+					boolean testfactor = ld.setDrawableByLayerId(R.id.layerBat, replace);
+					ImageView layoutlist1 = (ImageView)findViewById(R.id.imgBat);
+					layoutlist1.setImageDrawable(ld);					onOrigine=false;
+				}else{
+					LayerDrawable ld = (LayerDrawable) getResources().getDrawable(R.id.layerBat);		
+					Drawable replace = (Drawable) getResources().getDrawable(imagePathOrigine);
+					boolean testfactor = ld.setDrawableByLayerId(R.id.layerBat, replace);
+					ImageView layoutlist1 = (ImageView)findViewById(R.id.imgBat);
+					layoutlist1.setImageDrawable(ld);					onOrigine=true;
+				}
+			}
+
+		});
+	}
 	
 }
