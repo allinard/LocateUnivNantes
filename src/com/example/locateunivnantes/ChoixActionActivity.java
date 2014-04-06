@@ -10,35 +10,52 @@ import android.view.View;
 import android.view.View.OnClickListener;
 import android.widget.Button;
 
+/**
+ * Activity pour choisir l'action que l'utilisateur veut effectuer (localisation ou navigation)
+ * @author Alex
+ *
+ */
 public class ChoixActionActivity extends Activity {
 	
+	/**
+	 * Bouton aller vers (= choix navigation)
+	 */
 	Button buttonAllerVers;
+	
+	/**
+	 * Bouton Ou suis-je (= choix localisation)
+	 */
 	Button buttonOuSuisJe;
+	
 	private boolean destinationPresente=false;
-	@SuppressWarnings("unused")
+	
+	/**
+	 * 
+	 */
 	private Menu m = null;
 
-	
+
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
+		//Choix du layou activity_choix_action.xml
 		setContentView(R.layout.activity_choix_action);
+		//déclaration des listeners
 		addListenerOnButtonAllerVers();
 		addListenerOnButtonOuSuisJe();
-		//TextView texteView = (TextView) findViewById(R.id.custom_font);
-		//Typeface font = Typeface.createFromAsset(getAssets(), "lcallig.ttf");
-		//texteView.setTypeface(font);
-		
 	}
 
 	
+	/**
+	 * Listener sur le bouton aller vers
+	 */
 	private void addListenerOnButtonAllerVers() {
 		buttonAllerVers = (Button) findViewById(R.id.btnAller);
 		
 		buttonAllerVers.setOnClickListener(new OnClickListener() {
 			@Override
 			public void onClick(View arg0) {
-				
+				//Lorsque clique sur le bouton Aller vers, on démarre une nouvelle activity (ChoixDestination), pour choisir la destination voulue
 				Intent intent = new Intent(ChoixActionActivity.this,
 						ChoixDestinationActivity.class);
 				startActivity(intent);
@@ -50,15 +67,19 @@ public class ChoixActionActivity extends Activity {
 		
 	}
 
+	/**
+	 * 
+	 */
 	private void addListenerOnButtonOuSuisJe() {
 		buttonOuSuisJe = (Button) findViewById(R.id.btnOu);
 		
 		buttonOuSuisJe.setOnClickListener(new OnClickListener() {
 			@Override
 			public void onClick(View arg0) {
-				
+				//Lorsque clique sur le bouton ou suis je, on démarre une nouvelle activity (ChoixActionActivity), pour demarrer la localisation
 				Intent intent = new Intent(ChoixActionActivity.this,
 						ChoixOrigineActivity.class);
+				//on donne aussi comme information que l'on ne donne pas de destination (= ce n'est pas un calcul d'itinéraire)
 				intent.putExtra("destinationPresente", getDestinationPresente());
 				startActivity(intent);
 			}

@@ -28,39 +28,75 @@ import android.widget.RelativeLayout;
 import android.widget.ScrollView;
 import android.widget.TextView;
 
+/**
+ * Activity pour l'affichage de l'itineraire
+ * @author Alex
+ *
+ */
 public class ItineraireActivity extends Activity {
 
+	/**
+	 * Texte a afficher rappelant la destination
+	 */
 	TextView txtDestination;
+	
+	/**
+	 * Texte a afficher rappelant l'origine
+	 */
 	TextView txtOrigine;
+	
+	/**
+	 * Image du batiment
+	 */
 	ImageView imageView;
+	
+	/**
+	 * Vue pour zoomer
+	 */
 	ZoomView zoomView;
+	
+	/**
+	 * Layout de l'itineraire
+	 */
 	RelativeLayout itineraire;
+	
+	/**
+	 * Bouton pour switcher de batiment
+	 */
 	Button buttonChangeBat;
 
 	int imagePathDestination;
 	int imagePathOrigine;
-
 	boolean onOrigine;
 
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
+		//on choisit le layout activity_itineraire.xml
 		setContentView(R.layout.activity_itineraire);
+		
+		//on ajoute un listener
 		addListenerOnButtonChangeBat();
 
 		Bundle b = getIntent().getExtras();
 
+		//on récupère les salle de destination et d'origine
 		String destination = b.getString("destinationSalle");
 		String origine = b.getString("origineSalle");
+		
+		//on récupère l'image correspondant au batiment d'origine et de destination
 		imagePathDestination = choixImages(destination);
 		imagePathOrigine = choixImages(origine);
 
+		//texte qui rappelle à l'utilisateur la salle de destination
 		txtDestination = (TextView) findViewById(R.id.txtDestination);
 		txtDestination.setText(destination);
 
+		//texte qui rappelle à l'utilisateur la salle d'origine
 		txtOrigine = (TextView) findViewById(R.id.txtOrigine);
 		txtOrigine.setText(origine);
 
+		//On permet de zoomer et de scroller sur la carte
 		itineraire = (RelativeLayout) findViewById(R.id.activity_itineraire2);
 		View v = ((LayoutInflater) getSystemService(Context.LAYOUT_INFLATER_SERVICE))
 				.inflate(R.layout.zoomableview, null, false);
@@ -173,6 +209,9 @@ public class ItineraireActivity extends Activity {
 		return s;
 	}
 
+	/**
+	 * Pour changer de vue de batiment
+	 */
 	public void addListenerOnButtonChangeBat() {
 		buttonChangeBat = (Button) findViewById(R.id.btnChangeBat);
 		buttonChangeBat.setOnClickListener(new OnClickListener() {

@@ -14,15 +14,24 @@ import android.widget.Toast;
 
 import com.example.locateunivnantes.utils.LoginCASUnivNantes;
 
+/**
+ * Activity pour le login
+ * @author Alex
+ *
+ */
 public class LoginActivity extends Activity {
 
-
+	/**
+	 * Bouton pour effectuer le login
+	 */
 	Button buttonLogin;
 
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
+		//on choisit le layout activity_login.xml
 		setContentView(R.layout.activity_login);
+		//on ajoute les listeners sur les boutons
 		addListenerOnButtonLogin();
 	}
 
@@ -68,21 +77,28 @@ public class LoginActivity extends Activity {
 	}
 
 	
-
+	/**
+	 * Listener sur le bouton login
+	 */
 	public void addListenerOnButtonLogin() {
 		buttonLogin = (Button) findViewById(R.id.btnLogin);
 		buttonLogin.setOnClickListener(new OnClickListener() {
 			@Override
 			public void onClick(View arg0) {
+				//on récupere le login et mdp
 				EditText login = (EditText) findViewById(R.id.editTextLogin);
 				EditText password = (EditText) findViewById(R.id.editTextPassWd);
 				
+				//on recupère l'instance du LoginCASUnivNantes
 				LoginCASUnivNantes loginCASUnivNantes = LoginCASUnivNantes.getInstance();
+				
+				//si le login est ok, on bascule sur ChoixActionActivity
 				if(loginCASUnivNantes.logIn(login.getText().toString(), password.getText().toString())){
 					Intent intent = new Intent(LoginActivity.this,
 							ChoixActionActivity.class);
 					startActivity(intent);
 				}
+				//sinon on redemande le login et le mdp en affichant un message et en nettoyant les champs du formulaire
 				else{
 					login.setText("");
 					password.setText("");

@@ -10,6 +10,11 @@ import android.util.Log;
 import android.view.KeyEvent;
 import android.view.View;
 
+/**
+ * Activity pour le choix de la salle d'origine par lecture d'un QRCode
+ * @author Alex
+ *
+ */
 public class ChoixOrigineQRCodeActivity extends DecoderActivity {
 
 	private static final String TAG = ChoixOrigineQRCodeActivity.class
@@ -22,6 +27,7 @@ public class ChoixOrigineQRCodeActivity extends DecoderActivity {
 	@Override
 	public void onCreate(Bundle icicle) {
 		super.onCreate(icicle);
+		//on spécifie le layout capture
 		setContentView(R.layout.capture);
 		Log.v(TAG, "onCreate()");
 
@@ -64,11 +70,16 @@ public class ChoixOrigineQRCodeActivity extends DecoderActivity {
 		return super.onKeyDown(keyCode, event);
 	}
 
+	/**
+	 * Methode declenchée lorsque le QRCode est lu
+	 */
 	@Override
 	public void handleDecode(Result rawResult, Bitmap barcode) {
 		drawResultPoints(barcode, rawResult);
+		//on bascule sur ItineraireActivity
 		Intent intent = new Intent(ChoixOrigineQRCodeActivity.this,
 				ItineraireActivity.class);
+		//on spécifie à l'activity cible la salle d'origine et de destination
 		intent.putExtra("destinationSalle", getSalleDestination());
 		intent.putExtra("origineSalle", rawResult.getText());
 		startActivity(intent);

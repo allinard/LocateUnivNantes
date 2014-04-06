@@ -20,19 +20,44 @@ import android.widget.ExpandableListView;
 import android.widget.ExpandableListView.OnChildClickListener;
 import android.widget.Toast;
 
+/**
+ * Activity pour le choix de la destination
+ * @author Alex
+ *
+ */
 public class ChoixDestinationActivity extends Activity {
-
 	
+	/**
+	 * Bouton OK
+	 */
 	Button buttonOK;
+	
+	/**
+	 * Adapteur pour liste des batiments et salles
+	 */
 	ExpandableListAdapter listAdapter;
+	
+	/**
+	 * Liste des batiments et salles
+	 */
 	ExpandableListView listBatimentsSalles;
+	
+	/**
+	 * Header pour liste des batiments et salles (= noms des batiments)
+	 */
 	List<String> listDataHeader = new ArrayList<String>();
+	
 	HashMap<String, List<String>> listDataChild = new HashMap<String, List<String>>();
+	
+	/**
+	 * La salle selectionnée
+	 */
 	private String salleSelected;
 	
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
+		//on choisit le layer activity_choix_destination.xml
 		setContentView(R.layout.activity_choix_destination);
 
 		// get the listview
@@ -47,6 +72,7 @@ public class ChoixDestinationActivity extends Activity {
 		// setting list adapter
 		listBatimentsSalles.setAdapter(listAdapter);
 
+		//ajout des listeners sur les boutons
 		addListenerOnButtonOK();
 		addListenerOnListBatimentsSalles();
 	}
@@ -92,15 +118,20 @@ public class ChoixDestinationActivity extends Activity {
 		return super.onOptionsItemSelected(item);
 	}
 
+	/**
+	 * Listener sur le bouton ok
+	 */
 	public void addListenerOnButtonOK() {
 		buttonOK = (Button) findViewById(R.id.btnOK);
 		buttonOK.setOnClickListener(new OnClickListener() {
 			@Override
 			public void onClick(View arg0) {
+				//si on na pas de salle selectionnee, on affiche un toast disant qu'il faut en selectionner une
 				if(null == getSalleSelected()){
 					Toast.makeText(
 							getApplicationContext(),"Vous devez sélectionner une salle!", Toast.LENGTH_LONG).show();
 				}
+				//sinon on bascule sur ChoixOrigineActivity pour choisir l'origine de l'itinéraire
 				else{
 					Intent intent = new Intent(ChoixDestinationActivity.this,
 							ChoixOrigineActivity.class);
@@ -113,6 +144,9 @@ public class ChoixDestinationActivity extends Activity {
 		});
 	}
 
+	/**
+	 * Listener sur la liste expandable
+	 */
 	public void addListenerOnListBatimentsSalles() {
 		listBatimentsSalles = (ExpandableListView) findViewById(R.id.lvExp);
 		listBatimentsSalles.setOnChildClickListener(new OnChildClickListener() {
@@ -133,6 +167,7 @@ public class ChoixDestinationActivity extends Activity {
 				v.setBackgroundResource(android.R.color.holo_blue_light);
 				currentSelected = v;
 
+				//on sette et sauvegarde la salle selectionnee
 				setSalleSelected(listDataChild.get(
 						listDataHeader.get(groupPosition)).get(childPosition));
 

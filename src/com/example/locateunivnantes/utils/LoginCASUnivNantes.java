@@ -16,9 +16,14 @@ public class LoginCASUnivNantes {
 		return INSTANCE;
 	}
 
-	
+	/**
+	 * Permet l'authentification
+	 * @param userName le nom d'utilisateur entré
+	 * @param passWord le mdp entré
+	 * @return si l'authentification est effectuée
+	 */
 	public boolean logIn(String userName, String passWord){
-		if(userName.equals("alex")&&passWord.equals("coucou")){
+		if(userName.equals("test")&&passWord.equals("test")){
 			setCurrentUserLoggedIn(userName);
 			return true;
 		}

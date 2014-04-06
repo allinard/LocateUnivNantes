@@ -10,13 +10,21 @@ import android.view.MenuItem;
 import android.widget.Button;
 import android.widget.ImageView;
 
+/**
+ * MAIN ACTIVITY
+ * @author Alex
+ *
+ */
 public class MainActivity extends Activity {
 
 	Button buttonEntrer;
 	ImageView imageLogo;
 	ImageView imageName;
 
-	private final int DISPLAY_LENGTH = 3000;
+	/**
+	 * Temps d'affichage du logo
+	 */
+	private final int DISPLAY_LENGTH = 2500;
 
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {

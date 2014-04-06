@@ -20,11 +20,31 @@ import android.widget.ExpandableListView;
 import android.widget.ExpandableListView.OnChildClickListener;
 import android.widget.Toast;
 
+/**
+ * Activity pour le choix de la salle d'origine
+ * @author Alex
+ *
+ */
 public class ChoixOrigineBatimentActivity extends Activity {
 
+	/**
+	 * Bouton OK
+	 */
 	Button buttonOK;
+	
+	/**
+	 * Adapteur pour la liste deroulante des salles
+	 */
 	ExpandableListAdapter listAdapter;
+	
+	/**
+	 * Liste deroulante des salles
+	 */
 	ExpandableListView listBatimentsSalles;
+	
+	/**
+	 * Header pour liste des salles (= Batiments)
+	 */
 	List<String> listDataHeader = new ArrayList<String>();
 	HashMap<String, List<String>> listDataChild = new HashMap<String, List<String>>();
 	private String salleSelected;
@@ -47,9 +67,11 @@ public class ChoixOrigineBatimentActivity extends Activity {
 		// setting list adapter
 		listBatimentsSalles.setAdapter(listAdapter);
 
+		//on ajoute les listener
 		addListenerOnButtonOK();
 		addListenerOnListBatimentsSalles();
 
+		//on récupère la salle de destination depuis l'activity précedente
 		Bundle b = getIntent().getExtras();
 		setSalleDestination(b.getString("destinationSalle"));
 	}
@@ -95,19 +117,26 @@ public class ChoixOrigineBatimentActivity extends Activity {
 		return super.onOptionsItemSelected(item);
 	}
 
+	/**
+	 * Listener sur bouton OK
+	 */
 	public void addListenerOnButtonOK() {
 		buttonOK = (Button) findViewById(R.id.btnOK);
 		buttonOK.setOnClickListener(new OnClickListener() {
 			@Override
 			public void onClick(View arg0) {
+				//si aucune salle sélectionnée, on affiche un toast disant qu'il faut sélectionner une salle !
 				if (null == getSalleSelected()) {
 					Toast.makeText(getApplicationContext(),
 							"Vous devez sélectionner une salle!",
 							Toast.LENGTH_LONG).show();
-				} else {
+				}
+				//sinon, on démarre une nouvelle activity (ItineraireActivity)
+				else {
 					Intent intent = new Intent(
 							ChoixOrigineBatimentActivity.this,
 							ItineraireActivity.class);
+					//on spécifie a l'activity cible la salle d'origine et de destination
 					intent.putExtra("destinationSalle", getSalleDestination());
 					intent.putExtra("origineSalle", getSalleSelected());
 					startActivity(intent);
@@ -118,6 +147,9 @@ public class ChoixOrigineBatimentActivity extends Activity {
 		});
 	}
 
+	/**
+	 * Listener sur la liste des salles
+	 */
 	public void addListenerOnListBatimentsSalles() {
 		listBatimentsSalles = (ExpandableListView) findViewById(R.id.lvExp);
 		listBatimentsSalles.setOnChildClickListener(new OnChildClickListener() {

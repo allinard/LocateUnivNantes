@@ -10,6 +10,11 @@ import android.widget.ArrayAdapter;
 import android.widget.ListAdapter;
 import android.widget.ListView;
 
+/**
+ * Activity pour l'affichage de l'aide
+ * @author Alex
+ *
+ */
 public class AideActivity extends Activity{
 	
 	ListView vue;
@@ -18,6 +23,7 @@ public class AideActivity extends Activity{
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+        //on choisit le layout activity_aide.xml
         setContentView(R.layout.activity_aide);
         
         vue = (ListView) findViewById(R.id.listViewInfo);

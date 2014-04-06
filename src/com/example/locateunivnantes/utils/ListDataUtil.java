@@ -20,6 +20,11 @@ import org.xml.sax.SAXException;
 import com.example.locateunivnantes.utils.beans.Batiment;
 import com.example.locateunivnantes.utils.beans.Salle;
 
+/**
+ * Classe pour récupérer les batiments et les salles depuis un fichier XML
+ * @author Alex
+ *
+ */
 public class ListDataUtil {
 
 	public static List<Batiment> getListBatiments() {
