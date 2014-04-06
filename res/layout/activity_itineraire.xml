@@ -18,6 +18,7 @@
         android:layout_marginLeft="20dp"
         android:layout_marginTop="20dp"
         android:text="De "
+        android:visibility="invisible"
         android:textAppearance="?android:attr/textAppearanceSmall" />
 
     <TextView
@@ -37,6 +38,7 @@
         android:layout_alignBottom="@+id/txtDestination"
         android:layout_toRightOf="@+id/txtDestination"
         android:text="à"
+        android:visibility="invisible"
         android:textAppearance="?android:attr/textAppearanceSmall" />
 
     <TextView
@@ -50,7 +52,7 @@
 
     <Button
         android:id="@+id/btnChangeBat"
-        style="?android:attr/buttonStyleSmall"
+        style="@style/btnStyleSeagull"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_alignBaseline="@+id/txtOrigine"

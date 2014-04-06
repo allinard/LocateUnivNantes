@@ -12,6 +12,7 @@ import android.content.Context;
 import android.content.Intent;
 import android.graphics.drawable.Drawable;
 import android.graphics.drawable.LayerDrawable;
+import android.opengl.Visibility;
 import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.Menu;
@@ -27,6 +28,7 @@ import android.widget.LinearLayout;
 import android.widget.RelativeLayout;
 import android.widget.ScrollView;
 import android.widget.TextView;
+import android.widget.Toast;
 
 /**
  * Activity pour l'affichage de l'itineraire
@@ -91,10 +93,12 @@ public class ItineraireActivity extends Activity {
 		//texte qui rappelle à l'utilisateur la salle de destination
 		txtDestination = (TextView) findViewById(R.id.txtDestination);
 		txtDestination.setText(destination);
+		txtDestination.setVisibility(View.INVISIBLE);
 
 		//texte qui rappelle à l'utilisateur la salle d'origine
 		txtOrigine = (TextView) findViewById(R.id.txtOrigine);
 		txtOrigine.setText(origine);
+		txtOrigine.setVisibility(View.INVISIBLE);
 
 		//On permet de zoomer et de scroller sur la carte
 		itineraire = (RelativeLayout) findViewById(R.id.activity_itineraire2);
@@ -128,6 +132,12 @@ public class ItineraireActivity extends Activity {
 		// layoutlist1.setImageDrawable(ld);
 
 		onOrigine = true;
+		String toast = "Vous souhaitez aller de ";
+		toast = toast.concat(destination);
+		toast = toast.concat(" à ");
+		toast = toast.concat(origine);
+		
+		Toast.makeText(this,toast, Toast.LENGTH_LONG ).show();
 	}
 
 	private Menu m = null;
