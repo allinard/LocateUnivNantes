@@ -1,6 +1,5 @@
 package com.example.locateunivnantes;
 
-import android.opengl.Visibility;
 import android.os.Bundle;
 import android.app.Activity;
 import android.content.Intent;

@@ -2,22 +2,21 @@ package com.example.locateunivnantes;
 
 import android.app.Activity;
 import android.os.Bundle;
-import android.app.Activity;
 import android.content.Intent;
-import android.graphics.Typeface;
 import android.view.Menu;
 import android.view.MenuInflater;
 import android.view.MenuItem;
 import android.view.View;
 import android.view.View.OnClickListener;
 import android.widget.Button;
-import android.widget.TextView;
 
 public class ChoixActionActivity extends Activity {
 	
 	Button buttonAllerVers;
 	Button buttonOuSuisJe;
 	private boolean destinationPresente=false;
+	@SuppressWarnings("unused")
+	private Menu m = null;
 
 	
 	@Override
@@ -68,11 +67,9 @@ public class ChoixActionActivity extends Activity {
 	}
 	
 	private boolean getDestinationPresente() {
-		// TODO Auto-generated method stub
 		return destinationPresente;
 	}
 	
-	private Menu m = null;
 
 	@Override
 	public boolean onCreateOptionsMenu(Menu menu) {

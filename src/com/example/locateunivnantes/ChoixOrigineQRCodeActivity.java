@@ -1,41 +1,19 @@
 package com.example.locateunivnantes;
 
-import android.app.Activity;
 import android.content.Intent;
 import android.os.Bundle;
-import android.view.Menu;
 import android.widget.TextView;
-import java.text.DateFormat;
-import java.util.Date;
-import java.util.EnumSet;
-import java.util.Map;
-import java.util.Set;
-
 import com.google.zxing.Result;
-import com.google.zxing.ResultMetadataType;
 import com.example.locateunivnantes.qr.*;
-import com.example.locateunivnantes.qr.result.ResultHandler;
-import com.example.locateunivnantes.qr.result.ResultHandlerFactory;
-
 import android.graphics.Bitmap;
-import android.graphics.BitmapFactory;
-import android.os.Bundle;
 import android.util.Log;
-import android.util.TypedValue;
 import android.view.KeyEvent;
 import android.view.View;
-import android.widget.ImageView;
-import android.widget.TextView;
-import android.widget.Toast;
 
 public class ChoixOrigineQRCodeActivity extends DecoderActivity {
 
 	private static final String TAG = ChoixOrigineQRCodeActivity.class
 			.getSimpleName();
-	private static final Set<ResultMetadataType> DISPLAYABLE_METADATA_TYPES = EnumSet
-			.of(ResultMetadataType.ISSUE_NUMBER,
-					ResultMetadataType.POSSIBLE_COUNTRY);
-
 	private TextView statusView = null;
 	private View resultView = null;
 	private boolean inScanMode = false;
