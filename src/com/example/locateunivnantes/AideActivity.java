@@ -8,17 +8,25 @@ import android.view.MenuInflater;
 import android.view.MenuItem;
 import android.view.View;
 import android.view.View.OnClickListener;
+import android.widget.ArrayAdapter;
 import android.widget.Button;
+import android.widget.ListAdapter;
+import android.widget.ListView;
 
 public class AideActivity extends Activity{
 	
-	Button buttonRetour;
+	ListView vue;
+	String[] info = new String[]{"Version 1.0", "Signaler un problème"};
 	
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_aide);
-		addListenerOnButtonRetour();
+        
+        vue = (ListView) findViewById(R.id.listViewInfo);
+        ListAdapter adapter = new ArrayAdapter<String>(this, android.R.layout.simple_list_item_1, info);
+        vue.setAdapter(adapter);
+		
     }
 
 
@@ -51,20 +59,15 @@ public class AideActivity extends Activity{
 			return true;
 		case R.id.item5:
 			return true;
+		case R.id.item7:
+			return true;
+		case R.id.item8:
+			return true;
+		case R.id.item9:
+			return true;
 		}
 		return super.onOptionsItemSelected(item);
 	}
 
-    
-	public void addListenerOnButtonRetour() {
-		buttonRetour = (Button) findViewById(R.id.btnRetour);
-		buttonRetour.setOnClickListener(new OnClickListener() {
-			@Override
-			public void onClick(View arg0) {
-				finish();
-			}
- 
-		});
-	}
 
 }

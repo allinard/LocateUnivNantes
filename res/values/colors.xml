@@ -37,4 +37,5 @@
   <color name="viewfinder_mask">#607CFC00</color>
   <color name="white">#FFFFFF</color>
   <color name="bg_blue_light">#ffd6eef8</color>
+  <color name="text_blue_dark">#ff007299</color>
 </resources>

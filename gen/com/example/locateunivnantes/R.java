@@ -22,6 +22,7 @@ public final class R {
         public static final int result_view=0x7f040008;
         public static final int status_text=0x7f04000a;
         public static final int status_view=0x7f040009;
+        public static final int text_blue_dark=0x7f040010;
         public static final int transparent=0x7f040000;
         public static final int viewfinder_frame=0x7f04000b;
         public static final int viewfinder_laser=0x7f04000c;
@@ -50,20 +51,26 @@ public final class R {
         public static final int btncustom=0x7f020008;
         public static final int btncustom2=0x7f020009;
         public static final int depart=0x7f02000a;
-        public static final int ic_launcher=0x7f02000b;
-        public static final int ic_logo_locunivnantes=0x7f02000c;
-        public static final int ic_logo_locunivnantes2=0x7f02000d;
-        public static final int ic_logo_locunivnantes3=0x7f02000e;
-        public static final int icon=0x7f02000f;
-        public static final int layers=0x7f020010;
-        public static final int logounivnantes=0x7f020011;
-        public static final int namea=0x7f020012;
-        public static final int nameb=0x7f020013;
-        public static final int nameg=0x7f020014;
-        public static final int test=0x7f020015;
-        public static final int test2=0x7f020016;
-        public static final int test3=0x7f020017;
-        public static final int test4=0x7f020018;
+        public static final int ic_bleu=0x7f02000b;
+        public static final int ic_jaune=0x7f02000c;
+        public static final int ic_launcher=0x7f02000d;
+        public static final int ic_logo_locunivnantes=0x7f02000e;
+        public static final int ic_logo_locunivnantes2=0x7f02000f;
+        public static final int ic_logo_locunivnantes3=0x7f020010;
+        public static final int ic_logo_lun=0x7f020011;
+        public static final int ic_rouge=0x7f020012;
+        public static final int ic_vert=0x7f020013;
+        public static final int ic_violet=0x7f020014;
+        public static final int icon=0x7f020015;
+        public static final int layers=0x7f020016;
+        public static final int logounivnantes=0x7f020017;
+        public static final int namea=0x7f020018;
+        public static final int nameb=0x7f020019;
+        public static final int nameg=0x7f02001a;
+        public static final int test=0x7f02001b;
+        public static final int test2=0x7f02001c;
+        public static final int test3=0x7f02001d;
+        public static final int test4=0x7f02001e;
     }
     public static final class id {
         public static final int activity_itineraire=0x7f060014;
@@ -71,12 +78,11 @@ public final class R {
          */
         public static final int auto_focus=0x7f060000;
         public static final int barcode_image_view=0x7f060020;
-        public static final int btnAller=0x7f06000c;
+        public static final int btnAller=0x7f06000b;
         public static final int btnLogin=0x7f06001b;
-        public static final int btnOK=0x7f06000f;
-        public static final int btnOu=0x7f06000d;
+        public static final int btnOK=0x7f06000e;
+        public static final int btnOu=0x7f06000c;
         public static final int btnQRCode=0x7f060012;
-        public static final int btnRetour=0x7f060009;
         public static final int btnSalle=0x7f060013;
         public static final int contents_text_view=0x7f060029;
         public static final int custom_font=0x7f060007;
@@ -88,7 +94,7 @@ public final class R {
         public static final int encode_view=0x7f06002b;
         public static final int format_text_view=0x7f060022;
         public static final int format_text_view_label=0x7f060021;
-        public static final int imageView1=0x7f06000a;
+        public static final int imageView1=0x7f060009;
         public static final int imageView2=0x7f06001c;
         public static final int image_view=0x7f06002c;
         public static final int imgBat=0x7f06002f;
@@ -103,7 +109,8 @@ public final class R {
         public static final int item9=0x7f060037;
         public static final int lblListHeader=0x7f06002d;
         public static final int lblListItem=0x7f06002e;
-        public static final int lvExp=0x7f06000e;
+        public static final int listViewInfo=0x7f060008;
+        public static final int lvExp=0x7f06000d;
         public static final int meta_text_view=0x7f060028;
         public static final int meta_text_view_label=0x7f060027;
         public static final int preview_view=0x7f06001d;
@@ -113,8 +120,8 @@ public final class R {
         public static final int return_scan_result=0x7f060006;
         public static final int salleDestination=0x7f060011;
         public static final int status_view=0x7f06002a;
-        public static final int textView=0x7f06000b;
-        public static final int textView1=0x7f060008;
+        public static final int textView=0x7f06000a;
+        public static final int textView1=0x7f06000f;
         public static final int textView2=0x7f060015;
         public static final int textView3=0x7f060010;
         public static final int textView4=0x7f060017;
