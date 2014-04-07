@@ -30,7 +30,7 @@
         android:textStyle="bold"
         android:layout_marginTop="60dp"
         android:layout_marginBottom="10dp"
-        android:text="Sélectionnez un mode :"
+        android:text="@string/select_mode"
         android:textAppearance="?android:attr/textAppearanceMedium" />
 
     <Button
@@ -41,7 +41,7 @@
         android:layout_centerHorizontal="true"
         android:layout_centerInParent="true"
         android:layout_below="@+id/textView"
-        android:text="Aller vers" />
+        android:text="@string/select_nav" />
 
     <Button
         android:id="@+id/btnOu"
@@ -52,7 +52,7 @@
         android:layout_centerInParent="true"
         android:layout_marginTop="20dp"
         android:layout_below="@+id/btnAller"
-        android:text="Où suis-je ?" />
+        android:text="@string/select_localisation" />
     </RelativeLayout>
 
 </LinearLayout>

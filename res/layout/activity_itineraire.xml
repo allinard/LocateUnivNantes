@@ -7,75 +7,17 @@
     <RelativeLayout
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:id="@+id/activity_itineraire1" >
-        
-         <TextView
-        android:id="@+id/textView2"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_alignParentLeft="true"
-        android:layout_alignParentTop="true"
-        android:layout_marginLeft="20dp"
-        android:layout_marginTop="20dp"
-        android:text="De "
-        android:visibility="invisible"
-        android:textAppearance="?android:attr/textAppearanceSmall" />
-
-    <TextView
-        android:id="@+id/txtDestination"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_alignBaseline="@+id/textView2"
-        android:layout_alignBottom="@+id/textView2"
-        android:layout_toRightOf="@+id/textView2"
-        android:text="TextView" />
-
-    <TextView
-        android:id="@+id/textView4"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_alignBaseline="@+id/txtDestination"
-        android:layout_alignBottom="@+id/txtDestination"
-        android:layout_toRightOf="@+id/txtDestination"
-        android:text="à"
-        android:visibility="invisible"
-        android:textAppearance="?android:attr/textAppearanceSmall" />
-
-    <TextView
-        android:id="@+id/txtOrigine"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_alignBaseline="@+id/textView4"
-        android:layout_alignBottom="@+id/textView4"
-        android:layout_toRightOf="@+id/textView4"
-        android:text="TextView" />
-
-    <Button
-        android:id="@+id/btnChangeBat"
-        style="@style/btnStyleSeagull"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_alignBaseline="@+id/txtOrigine"
-        android:layout_alignBottom="@+id/txtOrigine"
-        android:layout_alignParentRight="true"
-        android:layout_marginRight="24dp"
-        android:text="->" />
-        
-    </RelativeLayout>
-    
-    
-    
-    
-    
-    
-    
-    
-    <RelativeLayout
-    android:layout_width="match_parent"
-    android:layout_height="match_parent"
     android:id="@+id/activity_itineraire2" >
-        
-        
+
+        <Button
+            android:id="@+id/btnChangeBat"
+            style="@style/btnStyleSeagull"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentTop="true"
+            android:layout_centerHorizontal="true"
+            android:text="->" />
+
     </RelativeLayout>
    
 

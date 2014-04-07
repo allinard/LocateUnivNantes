@@ -1,8 +1,11 @@
 package com.example.locateunivnantes;
 
+import java.util.Locale;
+
 import android.os.Bundle;
 import android.app.Activity;
 import android.content.Intent;
+import android.content.res.Configuration;
 import android.view.Menu;
 import android.view.MenuInflater;
 import android.view.MenuItem;
@@ -48,6 +51,8 @@ public class AideActivity extends Activity{
 
 	@Override
 	public boolean onOptionsItemSelected(MenuItem item) {
+		Configuration c = new Configuration(getResources()
+				.getConfiguration());
 		switch (item.getItemId()) {
 		case R.id.item1:
 			Intent intent = new Intent(AideActivity.this,
@@ -63,10 +68,29 @@ public class AideActivity extends Activity{
 		case R.id.item5:
 			return true;
 		case R.id.item7:
+			c.locale = Locale.FRENCH;
+			getResources().updateConfiguration(c,
+					getResources().getDisplayMetrics());
 			return true;
 		case R.id.item8:
+			c.locale = Locale.ENGLISH;
+			getResources().updateConfiguration(c,
+					getResources().getDisplayMetrics());
 			return true;
 		case R.id.item9:
+			c.locale = new Locale("es");
+			getResources().updateConfiguration(c,
+					getResources().getDisplayMetrics());
+			return true;
+		case R.id.item10:
+			c.locale = new Locale("zh");
+			getResources().updateConfiguration(c,
+					getResources().getDisplayMetrics());
+			return true;
+		case R.id.item11:
+			c.locale = new Locale("pt");
+			getResources().updateConfiguration(c,
+					getResources().getDisplayMetrics());
 			return true;
 		}
 		return super.onOptionsItemSelected(item);

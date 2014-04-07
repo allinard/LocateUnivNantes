@@ -1,12 +1,12 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-	<string name="select_mode">Sélectionnez un mode :</string>
-    <string name="select_nav">Aller vers</string>
-    <string name="select_localisation">Où suis-je ?</string>
-    <string name="scan_qr_code">Scanner le QRCode de la salle d\'origine</string>
-    <string name="info_dest">Votre destination est :</string>
-    <string name="localisez">Localisez-vous :</string>
-    <string name="salle">Salle</string>
+	<string name="select_mode">Selectione un modo de utilización:</string>
+    <string name="select_nav">Ir a</string>
+    <string name="select_localisation">¿Dónde estoy?</string>
+    <string name="scan_qr_code">Escánear el QRCode de la aula de orígen</string>
+    <string name="info_dest">Su destino es:</string>
+    <string name="localisez">Localicese:</string>
+    <string name="salle">Aula</string>
     <string name="qr">QRCode</string>
     <string name="app_name">LocateUnivNantes</string>
     <string name="action_settings">Settings</string>
@@ -24,7 +24,7 @@
     <string name="msg_default_format">Format</string>
     <string name="msg_default_meta">Metadata</string>
     <string name="msg_default_mms_subject">Hi</string>
-    <string name="msg_default_status">Placer le code QR dans le rectangle pour le scanner.</string>
+    <string name="msg_default_status">Ponga el QRCode en el rectángulo par escánearlo.</string>
     <string name="msg_default_time">Time</string>
     <string name="msg_default_type">Type</string>
     <string name="result_address_book">Found contact info</string>

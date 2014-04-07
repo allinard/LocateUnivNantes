@@ -1,6 +1,7 @@
 package com.example.locateunivnantes;
 
 import java.util.List;
+import java.util.Locale;
 
 import com.example.locateunivnantes.utils.ListDataUtil;
 import com.example.locateunivnantes.utils.beans.Batiment;
@@ -10,6 +11,7 @@ import pl.polidea.view.ZoomView;
 import android.app.Activity;
 import android.content.Context;
 import android.content.Intent;
+import android.content.res.Configuration;
 import android.graphics.drawable.Drawable;
 import android.graphics.drawable.LayerDrawable;
 import android.opengl.Visibility;
@@ -37,16 +39,6 @@ import android.widget.Toast;
  */
 public class ItineraireActivity extends Activity {
 
-	/**
-	 * Texte a afficher rappelant la destination
-	 */
-	TextView txtDestination;
-	
-	/**
-	 * Texte a afficher rappelant l'origine
-	 */
-	TextView txtOrigine;
-	
 	/**
 	 * Image du batiment
 	 */
@@ -90,15 +82,6 @@ public class ItineraireActivity extends Activity {
 		imagePathDestination = choixImages(destination);
 		imagePathOrigine = choixImages(origine);
 
-		//texte qui rappelle à l'utilisateur la salle de destination
-		txtDestination = (TextView) findViewById(R.id.txtDestination);
-		txtDestination.setText(destination);
-		txtDestination.setVisibility(View.INVISIBLE);
-
-		//texte qui rappelle à l'utilisateur la salle d'origine
-		txtOrigine = (TextView) findViewById(R.id.txtOrigine);
-		txtOrigine.setText(origine);
-		txtOrigine.setVisibility(View.INVISIBLE);
 
 		//On permet de zoomer et de scroller sur la carte
 		itineraire = (RelativeLayout) findViewById(R.id.activity_itineraire2);
@@ -132,10 +115,17 @@ public class ItineraireActivity extends Activity {
 		// layoutlist1.setImageDrawable(ld);
 
 		onOrigine = true;
-		String toast = "Vous souhaitez aller de ";
-		toast = toast.concat(destination);
-		toast = toast.concat(" à ");
-		toast = toast.concat(origine);
+		String toast;
+		if(null!=destination){
+			toast = "Vous souhaitez aller de ";
+			toast = toast.concat(destination);
+			toast = toast.concat(" à ");
+			toast = toast.concat(origine);
+		}
+		else{
+			toast = "Vous êtes en salle ";
+			toast = toast.concat(origine);
+		}
 		
 		Toast.makeText(this,toast, Toast.LENGTH_LONG ).show();
 	}
@@ -152,6 +142,8 @@ public class ItineraireActivity extends Activity {
 
 	@Override
 	public boolean onOptionsItemSelected(MenuItem item) {
+		Configuration c = new Configuration(getResources()
+				.getConfiguration());
 		switch (item.getItemId()) {
 		case R.id.item1:
 			Intent intent1 = new Intent(ItineraireActivity.this,
@@ -167,10 +159,29 @@ public class ItineraireActivity extends Activity {
 		case R.id.item5:
 			return true;
 		case R.id.item7:
+			c.locale = Locale.FRENCH;
+			getResources().updateConfiguration(c,
+					getResources().getDisplayMetrics());
 			return true;
 		case R.id.item8:
+			c.locale = Locale.ENGLISH;
+			getResources().updateConfiguration(c,
+					getResources().getDisplayMetrics());
 			return true;
 		case R.id.item9:
+			c.locale = new Locale("es");
+			getResources().updateConfiguration(c,
+					getResources().getDisplayMetrics());
+			return true;
+		case R.id.item10:
+			c.locale = new Locale("zh");
+			getResources().updateConfiguration(c,
+					getResources().getDisplayMetrics());
+			return true;
+		case R.id.item11:
+			c.locale = new Locale("pt");
+			getResources().updateConfiguration(c,
+					getResources().getDisplayMetrics());
 			return true;
 		case R.id.item6:
 			Intent intent = new Intent(ItineraireActivity.this,
