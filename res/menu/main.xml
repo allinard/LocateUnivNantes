@@ -1,13 +1,13 @@
 <?xml version="1.0" encoding="utf-8"?>
 <menu xmlns:android="http://schemas.android.com/apk/res/android" >
-  <item android:id="@+id/item1" android:title="Home"></item>
-  <item android:id="@+id/item2" android:titleCondensed="Préférences" android:title="Préférences de l'application">
+  <item android:id="@+id/item1" android:title="@string/home"></item>
+  <item android:id="@+id/item2" android:titleCondensed="@string/prefs" android:title="@string/prefs_appli">
     <menu>
-      <item android:id="@+id/item3" android:title="Couleurs"/>
-      <item android:id="@+id/item4" android:title="Version Handicap" android:checkable="true" android:checked="false"/>
+      <item android:id="@+id/item3" android:title="@string/couleurs"/>
+      <item android:id="@+id/item4" android:title="@string/version_handicap" android:checkable="true" android:checked="false"/>
     </menu>
   </item>
-  <item android:id="@+id/item5" android:title="Langues">
+  <item android:id="@+id/item5" android:title="@string/langues">
       <menu>
       <item android:id="@+id/item7" android:title="Français"/>
       <item android:id="@+id/item8" android:title="English"/>
@@ -16,5 +16,5 @@
       <item android:id="@+id/item11" android:title="中国的"/>
     </menu>
   </item>
-  <item android:id="@+id/item6" android:title="Informations"/>
+  <item android:id="@+id/item6" android:title="@string/informations"/>
 </menu>

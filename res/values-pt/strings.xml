@@ -8,6 +8,16 @@
     <string name="localisez">找到你：</string>
     <string name="salle">房间</string>
     <string name="qr">QRCode</string>
+    <string name="id">注册</string>
+    <string name="mdp">密码</string>
+    <string name="login">注册</string>
+    <string name="home">家</string>
+    <string name="prefs">首</string>
+    <string name="prefs_appli">应用程序首选项</string>
+    <string name="couleurs">颜色</string>
+    <string name="version_handicap">版本残疾</string>
+    <string name="informations">信息</string>
+    <string name="langues">语言</string>
     <string name="app_name">LocateUnivNantes</string>
     <string name="action_settings">Settings</string>
     <string name="hello_world">Hello world!</string>

@@ -8,6 +8,16 @@
     <string name="localisez">Localisez-vous :</string>
     <string name="salle">Salle</string>
     <string name="qr">QRCode</string>
+    <string name="id">Identifiant</string>
+    <string name="mdp">Mot de passe</string>
+    <string name="login">Login</string>
+    <string name="home">Home</string>
+    <string name="prefs">Préférences</string>
+    <string name="prefs_appli">Préférences de l\'application</string>
+    <string name="couleurs">Couleurs</string>
+    <string name="version_handicap">Version handicap</string>
+    <string name="informations">Informations</string>
+    <string name="langues">Langues</string>
     <string name="app_name">LocateUnivNantes</string>
     <string name="action_settings">Settings</string>
     <string name="hello_world">Hello world!</string>

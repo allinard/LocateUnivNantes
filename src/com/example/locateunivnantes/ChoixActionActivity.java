@@ -12,6 +12,7 @@ import android.view.MenuItem;
 import android.view.View;
 import android.view.View.OnClickListener;
 import android.widget.Button;
+import android.widget.Toast;
 
 /**
  * Activity pour choisir l'action que l'utilisateur veut effectuer (localisation
@@ -118,8 +119,10 @@ public class ChoixActionActivity extends Activity {
 		case R.id.item2:
 			return true;
 		case R.id.item3:
+			Toast.makeText(this,"Not implemented yet!", Toast.LENGTH_LONG ).show();
 			return true;
 		case R.id.item4:
+			Toast.makeText(this,"Not implemented yet!", Toast.LENGTH_LONG ).show();
 			return true;
 		case R.id.item5:
 			return true;
